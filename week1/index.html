@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Product Table</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .product-table {
+      border-collapse: separate;
+      border-spacing: 8px; /* reduced space between the boxes */
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      /* slimmer outer border to avoid bold look */
+      border: 2px solid #000;
+      padding: 6px; /* smaller space between outer border and table cells */
+      box-sizing: border-box;
+    }
+
+    .product-table thead th {
+      background: #f6f6f6;
+      padding: 12px;
+      border: 3px solid #777;
+      text-align: center;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .product-table td {
+      width: 14%;
+      vertical-align: middle;
+      text-align: center;
+      padding: 18px 12px;
+      border: 3px solid #777;
+      background: #ffffff;
+      box-sizing: border-box;
+    }
+
+    /* Make some columns wider */
+    .col-id { width: 10%; }
+    .col-name { width: 28%; text-align: left; padding-left: 24px; font-family: "Courier New", Courier, monospace; }
+    .col-cost { width: 14%; }
+    .col-image { width: 24%; }
+
+    /* image container that centers smaller logo inside a framed box */
+    .img-box {
+      display: inline-block;
+      width: 90px;
+      height: 90px;
+      padding: 6px;
+      border: 2px solid #cfcfcf;
+      background: #fff;
+      box-shadow: none;
+      vertical-align: middle;
+    }
+
+    .img-box img {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 2px solid #999;
+      background: #eee;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .btn:active { transform: translateY(1px); }
+
+    /* small visual tweaks so the header and body align like the picture */
+    thead th.update-col, td.update-col,
+    thead th.delete-col, td.delete-col {
+      width: 8%;
+    }
+
+    /* Responsive: stack on small screens */
+    @media (max-width:640px) {
+      .product-table, .product-table thead, .product-table tbody, .product-table th, .product-table td, .product-table tr {
+        display:block;
+      }
+      .product-table thead { display:none; }
+      .product-table tr { margin-bottom: 18px; }
+      .product-table td { border: 2px solid #777; display:flex; justify-content:space-between; padding:10px; }
+      .col-name { padding-left: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center">Products</h2>
+
+  <table class="product-table" aria-label="Products">
+    <thead>
+      <tr>
+        <th class="col-id">P_ID</th>
+        <th class="col-name">P_NAME</th>
+        <th class="col-cost">P_COST</th>
+        <th class="col-image">P_IMAGE</th>
+        <th class="update-col">UPDATE</th>
+        <th class="delete-col">DELETE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="col-id">111</td>
+        <td class="col-name">P_ONE</td>
+        <td class="col-cost">₹ 10000</td>
+        <td class="col-image">
+          <div class="img-box">
+            <!-- Replace with actual image path (e.g., images/flipkart.png) -->
+            <img src="flipkart-logo-png_seeklogo-284422.png" alt="Flipkart logo">
+          </div>
+        </td>
+        <td class="update-col"><button class="btn">UPDATE</button></td>
+        <td class="delete-col"><button class="btn">DELETE</button></td>
+      </tr>
+
+      <tr>
+        <td class="col-id">222</td>
+        <td class="col-name">P_TWO</td>
+        <td class="col-cost">₹ 20000</td>
+        <td class="col-image">
+          <div class="img-box">
+            <!-- Replace with actual image path (e.g., images/amazon.png) -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon logo">
+          </div>
+        </td>
+        <td class="update-col"><button class="btn">UPDATE</button></td>
+        <td class="delete-col"><button class="btn">DELETE</button></td>
+      </tr>
+
+      <tr>
+        <td class="col-id">333</td>
+        <td class="col-name">P_THREE</td>
+        <td class="col-cost">₹ 30000</td>
+        <td class="col-image">
+          <div class="img-box">
+            <!-- Replace with actual image path (e.g., images/myntra.png) -->
+            <img src="download.png" alt="Myntra logo">
+          </div>
+        </td>
+        <td class="update-col"><button class="btn">UPDATE</button></td>
+        <td class="delete-col"><button class="btn">DELETE</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
